@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "obe97nM2uMJg7cVVoZ6iaNvPwNwcR4gUBxf+PSK37FVBqScSH4t/OwczYlefFPvTcwOBzpjqcdTEFRMwE/aDZg==",
+  "success": true,
+  "projectFilePath": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.Api/Dominos.Services.Pricing.Api.csproj",
+  "expectedPackageFiles": [
+    "/Users/gloria/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

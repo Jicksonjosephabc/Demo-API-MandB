@@ -1,0 +1,140 @@
+replicaCount: 3
+revisionHistoryLimit: 0
+
+## PodDisruptionBudget
+## ref: https://kubernetes.io/docs/tasks/run-application/configure-pdb/#specifying-a-poddisruptionbudget
+maxUnavailable: 1
+
+image:
+  repository: #{Azure.ACR.Image}#
+  tag: #{Azure.ACR.Image.Tag}#
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  annotations: {}
+  labels: {}
+  name: http
+  externalPort: 80
+  internalPort: 80
+
+ingress:
+  enabled: true
+  annotations: {}
+  path: /#{Azure.AKS.AppName}#/*
+  pathType: Prefix
+  hosts: []
+    # - chart-example.local
+  # tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+## Probes
+## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/
+readinessProbe:
+  enabled: true
+  path: /health
+  initialDelaySeconds: 30
+  timeoutSeconds: 5
+  periodSeconds: 30
+  successThreshold: 1
+  failureThreshold: 3
+
+livenessProbe:
+  enabled: true
+  path: /health
+  initialDelaySeconds: 30
+  timeoutSeconds: 5
+  periodSeconds: 30
+  successThreshold: 1
+  failureThreshold: 3
+
+# Give the pod time to finish processing connections before it's sent a SIGTERM.
+#   https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-terminating-with-grace
+lifecycle:
+  preStop:
+    exec:
+      command: ["sleep", "5"]
+
+## Configure resource requests and limits
+## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
+resources: 
+  limits:
+    memory: 1024Mi
+  requests: 
+    memory: 512Mi
+
+## Additional command line arguments to pass to images binary
+extraArgs: {}
+
+## Additional environmental variables to pass to container
+extraEnvs:
+  NEW_RELIC_APP_NAME: "dpe-cmrc-#{Cmrc.EnvironmentCode}#-#{Cmrc.RegionCode}#-#{Azure.AKS.AppName}#"
+  NEW_RELIC_LOG_LEVEL: info
+  NEW_RELIC_DISTRIBUTED_TRACING_ENABLED: true
+  InfrastructureSettings__BasePath: #{InfrastructureSettings.BasePath}#
+  StoreMenuServiceClientSettings__BaseUrl: #{Service.StoreMenu.DNS}#
+  FeaturesServiceClientSettings__BaseUrl: #{Service.Features.DNS}#
+  RedisSettings__Hosts__0__Port: #{RedisCache.Port}#
+  ApplicationSettings__ThreadCount: #{App.ThreadCount}#
+
+## Additional volumeMounts to the main container.
+extraVolumeMounts: []
+  # - name: mount
+  #   mountPath: /mnt
+
+## Additional volumes to the pod.
+extraVolumes: []
+  # - name: volume
+  #   emptyDir: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+secretFiles: {}
+  # gcloud:
+  #   mountPath: /etc/gcloud/key.json
+  #   subPath: key.json
+  #   files:
+  #     json.key: base64encSecret
+
+autoscaling:
+  enabled: true
+  minReplicas: 12
+  maxReplicas: 12
+  metrics:
+    cpuUtilization:
+      enabled: false
+      percentage: 0
+    memoryUtilization:
+      enabled: false
+      value: 0
+    requestsPerSecond:
+      enabled: true
+      averageValue: 6
+
+keyVault:
+  enabled: true
+  kvName: #{Azure.KeyVault.App01.Name}#
+  secrets:
+    NEW_RELIC_ENABLED: NewRelic--APM--Client--Enabled
+    NEW_RELIC_LICENSE_KEY: NewRelic--APM--Client--LicenceKey
+    SecurityConfig__ApiKey: Azure2--AKS--Checkout--SecurityConfig--ApiKey
+    ApplicationInsights__InstrumentationKey: Azure2--AppInsights--001--InstrumentionKey
+    StoreMenuServiceClientSettings__ApiKey: Azure2--AKS--StoreMenu--SecurityConfig--ApiKey
+    CouponsServiceClientSettings__BaseUrl: Azure1--WebApp--Coupons--BaseURL
+    CouponsServiceClientSettings__ApiKey: Azure1--WebApp--Coupons--SecurityConfig--ApiKey
+    FeaturesServiceClientSettings__ApiKey: Azure2--AKS--Features--SecurityConfig--ApiKey
+    OrderTimerServiceClientSettings__BaseUrl: AWS2--ECS--OrderTimer--BaseURL
+    OrderTimerServiceClientSettings__ApiKey: AWS2--ECS--Services--SecurityConfig--ApiKey
+    RedisSettings__Password: Azure2--Redis--001--PrimaryAccessKey
+    RedisSettings__Hosts__0__Host: Azure2--Redis--001--Hostname
+    RedisSettings__Ssl: Azure2--Redis--001--UseSSL
+    
+  volumeName: kvsecrets                    # [Optional] volume name defaults to kvsecrets
+  spcName: secret-privider-class           # [Optional] name of secret-privider-class operator defaults to .Release.Name "secret-privider-class"
+  secretsDir: /secrets                     # [Optional] path where secrets will be mounted defaults to /secrets

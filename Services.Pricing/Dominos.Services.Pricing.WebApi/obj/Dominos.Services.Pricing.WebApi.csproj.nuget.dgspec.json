@@ -1,0 +1,318 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.WebApi/Dominos.Services.Pricing.WebApi.csproj": {}
+  },
+  "projects": {
+    "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.Api/Dominos.Services.Pricing.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.Api/Dominos.Services.Pricing.Api.csproj",
+        "projectName": "Dominos.Services.Pricing.Api",
+        "projectPath": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.Api/Dominos.Services.Pricing.Api.csproj",
+        "packagesPath": "/Users/gloria/.nuget/packages/",
+        "outputPath": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/NuGet.Config",
+          "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/NuGet.Config",
+          "/Users/gloria/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/NugetPackage": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dominos-au.pkgs.visualstudio.com/_packaging/OneDigital/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.419/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.App/Dominos.Services.Pricing.App.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.App/Dominos.Services.Pricing.App.csproj",
+        "projectName": "Dominos.Services.Pricing.App",
+        "projectPath": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.App/Dominos.Services.Pricing.App.csproj",
+        "packagesPath": "/Users/gloria/.nuget/packages/",
+        "outputPath": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.App/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/NuGet.Config",
+          "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/NuGet.Config",
+          "/Users/gloria/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/NugetPackage": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dominos-au.pkgs.visualstudio.com/_packaging/OneDigital/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.Api/Dominos.Services.Pricing.Api.csproj": {
+                "projectPath": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.Api/Dominos.Services.Pricing.Api.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Dominos.OLO.Pricing.Adaptor": {
+              "target": "Package",
+              "version": "[2022.5.6.1, )"
+            },
+            "Dominos.OLO.Pricing.Module": {
+              "target": "Package",
+              "version": "[2022.5.6.1, )"
+            },
+            "Dominos.Services.Common.Tools": {
+              "target": "Package",
+              "version": "[2022.4.19.5, )"
+            },
+            "Dominos.Services.Common.Tools.FeatureToggles": {
+              "target": "Package",
+              "version": "[2022.4.19.5, )"
+            },
+            "Dominos.Services.Features.Api": {
+              "target": "Package",
+              "version": "[2022.4.4.2, )"
+            },
+            "Dominos.Services.StoreMenu.Api": {
+              "target": "Package",
+              "version": "[2022.2.3.2, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.2.88, )"
+            },
+            "StackExchange.Redis.Extensions.Core": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "StackExchange.Redis.Extensions.Newtonsoft": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.419/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.WebApi/Dominos.Services.Pricing.WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.WebApi/Dominos.Services.Pricing.WebApi.csproj",
+        "projectName": "Dominos.Services.Pricing.WebApi",
+        "projectPath": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.WebApi/Dominos.Services.Pricing.WebApi.csproj",
+        "packagesPath": "/Users/gloria/.nuget/packages/",
+        "outputPath": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.WebApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/NuGet.Config",
+          "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/NuGet.Config",
+          "/Users/gloria/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/NugetPackage": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dominos-au.pkgs.visualstudio.com/_packaging/OneDigital/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.Api/Dominos.Services.Pricing.Api.csproj": {
+                "projectPath": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.Api/Dominos.Services.Pricing.Api.csproj"
+              },
+              "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.App/Dominos.Services.Pricing.App.csproj": {
+                "projectPath": "/Users/gloria/Desktop/NG-OLO-web-Auto---Framework----/Services.Pricing/Dominos.Services.Pricing.App/Dominos.Services.Pricing.App.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Dominos.Services.Common.Tools": {
+              "target": "Package",
+              "version": "[2022.4.19.5, )"
+            },
+            "Dominos.Services.Common.Tools.AspNetCore": {
+              "target": "Package",
+              "version": "[2022.2.21.3, )"
+            },
+            "Dominos.Services.Common.Tools.AspNetCore.AppInsights": {
+              "target": "Package",
+              "version": "[2022.2.21.3, )"
+            },
+            "Dominos.Services.Common.Tools.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[2022.2.21.3, )"
+            },
+            "Dominos.Services.Common.Tools.FeatureToggles": {
+              "target": "Package",
+              "version": "[2022.4.19.5, )"
+            },
+            "Dominos.Services.Common.Tools.HealthChecks": {
+              "target": "Package",
+              "version": "[2022.2.21.3, )"
+            },
+            "Dominos.Services.Common.Tools.Resilience": {
+              "target": "Package",
+              "version": "[2022.2.21.3, )"
+            },
+            "Dominos.Services.Common.Tools.StartupTasks": {
+              "target": "Package",
+              "version": "[2022.2.21.3, )"
+            },
+            "Dominos.Services.Features.Api": {
+              "target": "Package",
+              "version": "[2022.4.4.2, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.3.0, )"
+            },
+            "Microsoft.AspNetCore.Hosting": {
+              "target": "Package",
+              "version": "[2.2.7, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.14, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv": {
+              "target": "Package",
+              "version": "[3.1.23, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.419/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

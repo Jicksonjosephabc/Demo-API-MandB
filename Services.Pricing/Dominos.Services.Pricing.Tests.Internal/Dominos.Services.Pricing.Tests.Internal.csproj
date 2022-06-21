@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <Compile Remove="AutoSubstitute\**" />
+	  <Compile Remove="Component\**" />
+	  <Compile Remove="Controllers\**" />
+	  <Compile Remove="Insfrastructure\**" />
+	  <EmbeddedResource Remove="AutoSubstitute\**" />
+	  <EmbeddedResource Remove="Component\**" />
+	  <EmbeddedResource Remove="Controllers\**" />
+	  <EmbeddedResource Remove="Insfrastructure\**" />
+	  <None Remove="AutoSubstitute\**" />
+	  <None Remove="Component\**" />
+	  <None Remove="Controllers\**" />
+	  <None Remove="Insfrastructure\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoFixture" Version="4.17.0" />
+    <PackageReference Include="MemoryCache.Testing.NSubstitute" Version="1.2.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="NSubstitute" Version="4.2.2" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Shouldly" Version="3.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dominos.Services.Pricing.App\Dominos.Services.Pricing.App.csproj" />
+    <ProjectReference Include="..\Dominos.Services.Pricing.WebApi\Dominos.Services.Pricing.WebApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="xunit.runner.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
